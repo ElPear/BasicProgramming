@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="container">
+        <!-- Kontroller -->
+        <div class="controls">
+            <div class="control-item">
+                <!-- filtrera: kategori -->
+                 <label>Kategori</label>
+                 <select id="filter-category">
+                    <option value="alla">Allt</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="kläder">Kläder</option>
+                 </select>
+            </div>
+            <div class="control-item">
+                <!-- sortera: pris -->
+                 <label>Sortera</label>
+                 <select id="sort-price">
+                    <option value="normal">Standard</option>
+                    <option value="low-high">Low-High</option>
+                    <option value="high-low">High-Low</option>
+                 </select>
+            </div>
+            <div class="control-item">
+                <!-- map: rea/rabatt -->
+                 <label>Rea</label>
+                 <button id="btn-discount">20% Rabatt</button>
+            </div>
+        </div>
+        <div class="product-container" id="product-container">
+    
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
