@@ -17,10 +17,10 @@ const showItems = (array) =>{
     for(const item of array){
         let card = document.createElement("div")
         card.innerHTML = `
-        <div class="product-icon"> ${item.icon}</div>
-        <div class="product-name"> ${item.name}</div>
-        <div class="product-category"> ${item.category}</div>
-        <div class="product-price"> ${item.price}kr</div>
+        <div class="product-icon">${item.icon}</div>
+        <div class="product-name">${item.name}</div>
+        <div class="product-category">${item.category}</div>
+        <div class="product-price">${item.price}kr</div>
         `
         card.classList = "product-card"
         productContainer.appendChild(card)
