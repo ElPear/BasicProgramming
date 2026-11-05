@@ -10,7 +10,7 @@ const products=[
 const productContainer = document.querySelector("#product-container")
 const categorySelector = document.querySelector("#filter-category")
 const priceSelector = document.querySelector("#sort-price")
-const discountBtn = document.querySelector("#btn-discount")
+const discountCheck = document.querySelector("#discount-check")
 
 const showItems = (array) =>{
     productContainer.replaceChildren()
@@ -32,7 +32,9 @@ const applyFilter = () =>{
     
     result = result.filter((item) => item.category === categorySelector.value || categorySelector.value === "alla")
 
-    result = result.sort((a,b) => priceSelector.value ==="normal" ? a = b : priceSelector.value ==="low-high" ? a.price - b.price : b.price - a.price)
+    result = result.sort((a,b) => priceSelector.value === "normal" ? a = b : priceSelector.value ==="low-high" ? a.price - b.price : b.price - a.price)
+
+    result = result.map(a => discountCheck.checked ? {name: a.name, category: a.category, price: a.price*0.8, icon:a.icon} : a)
 
     showItems(result)
 }
@@ -42,7 +44,7 @@ const applyFilter = () =>{
 
 applyFilter()
 
-document.querySelectorAll("#filter-category, #sort-price, #btn-discount").forEach(element => {
+document.querySelectorAll("#filter-category, #sort-price, #discount-check").forEach(element => {
     element.addEventListener("change", applyFilter)
 });
 
