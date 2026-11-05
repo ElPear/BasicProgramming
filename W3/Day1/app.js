@@ -34,7 +34,7 @@ const applyFilter = () =>{
 
     result = result.sort((a,b) => priceSelector.value === "normal" ? a = b : priceSelector.value ==="low-high" ? a.price - b.price : b.price - a.price)
 
-    result = result.map(a => discountCheck.checked ? {name: a.name, category: a.category, price: a.price*0.8, icon:a.icon} : a)
+    result = result.map(item => discountCheck.checked ? {name: item.name, category: item.category, price: item.price*0.8, icon:item.icon} : item)
 
     showItems(result)
 }
